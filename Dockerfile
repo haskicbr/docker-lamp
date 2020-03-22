@@ -25,6 +25,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       rm -fr /tmp/* && \
       rm -rf /var/list/apt/* && \
       rm -r /var/lib/apt/lists/* && \
-      apt-get clean
+      apt-get clean && \
+      useradd ci && \
+      adduser ci www-data
 
 RUN docker-php-ext-install mysqli
